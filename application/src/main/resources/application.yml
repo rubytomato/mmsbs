@@ -1,0 +1,85 @@
+# SPRING CORE
+spring:
+  beaninfo:
+    ignore: true # Skip search of BeanInfo classes.
+# OUTPUT
+  output:
+    ansi:
+      enabled: detect # Configure the ANSI output.
+# PROFILES
+  profiles:
+    active: dev # Comma-separated list (or list if using YAML) of active profiles.
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample_db?useSSL=false&rewriteBatchedStatements=true
+    username: test_user
+    password: test_user
+    driverClassName: com.mysql.jdbc.Driver
+    tomcat:
+      defaultAutoCommit: false
+      defaultReadOnly: false
+      validationQuery: select 1
+      timeBetweenEvictionRunsMillis: 3600000
+      validationQueryTimeout: 3
+      testOnBorrow: true
+      testWhileIdle: true
+      testOnConnect: true
+      removeAbandoned: true
+      removeAbandonedTimeout: 60
+      logAbandoned: true
+      maxActive: 4
+      maxIdle: 4
+      minIdle: 0
+      initialSize: 4
+# JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+  jpa:
+    properties:
+      hibernate:
+#        show_sql: true
+#        format_sql: true
+#        use_sql_comments: true
+#        generate_statistics: true
+#        max_fetch_depth: 10
+#        default_batch_fetch_size: 30
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 25
+          fetch_size: 25
+          batch_versioned_data: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+server:
+  port: 8080 # Server HTTP port.
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+#    org.springframework.orm.jpa.JpaTransactionManager: DEBUG
+#    org.springframework.transaction: TRACE
+#    org.hibernate: INFO
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.hibernate.transaction: DEBUG
+#    org.hibernate.jpa.internal: DEBUG
+#    org.hibernate.event.internal: DEBUG
+#    org.hibernate.engine.transaction.internal: DEBUG
+#    org.hibernate.internal.util: DEBUG
+
+# application settings
+custom:
+  application:
+    key1: app_a
+    key2: app_b
+    key3: ajToeoe04jtmtU
+  domain:
+    key1: domain_c
+    key2: domain_d
+  common:
+    key1: common_e
+    key2: common_f
+    datePattern: yyyy-MM-dd

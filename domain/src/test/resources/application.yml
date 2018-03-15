@@ -1,0 +1,20 @@
+# SPRING CORE
+spring:
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample_db?useSSL=false&rewriteBatchedStatements=true
+    username: test_user
+    password: test_user
+    driverClassName: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+#    org.hibernate: INFO
+#    org.hibernate.SQL: DEBUG
+
+custom:
+  domain:
+    key1: test_domain_c
+    key2: test_domain_d
